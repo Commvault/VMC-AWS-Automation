@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "e39afd15-3045-499c-a327-dac7f36b6a8f",
+		"name": "Demo Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c18b207-1368-4bc1-86f3-d8663fdc13d9",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"Token\", jsonData.token);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "13e4ee98-f8e6-4703-a7af-b20eaab8d64c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{Accept}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "{{Content-Type}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mode\": 4,\n    \"domain\": \"\",\n    \"username\": \"{{UserName}}\",\n    \"password\": \"{{Password}}\",\n    \"commserver\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{ServerURL}}/Login",
+					"host": [
+						"{{ServerURL}}"
+					],
+					"path": [
+						"Login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{Accept}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{Content-Type}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mode\": 4,\n    \"domain\": \"\",\n    \"username\": \"{{UserName}}\",\n    \"password\": \"{{Password}}\",\n    \"commserver\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{ServerURL}}/Login",
+							"host": [
+								"{{ServerURL}}"
+							],
+							"path": [
+								"Login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 May 2020 05:16:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"aliasName\": \"1\",\n    \"userGUID\": \"4132DEE9-7F23-4D38-B62B-58F40EAD4A5C\",\n    \"loginAttempts\": 0,\n    \"remainingLockTime\": 0,\n    \"smtpAddress\": \"pktr@commvault.com\",\n    \"userName\": \"admin\",\n    \"providerType\": 1,\n    \"ccn\": 0,\n    \"token\": \"QSDK 3a607719c64c91454f8988d0970ba49422d0818b05039347c278c9369556205917d82417bf0c80ee695078010cdeaeeca02fce6ab71d4c045bcf97cd48dc91e76e90f52dcae8ed3cae793dd1f294855d91c32fe617316e70cc2c8b41d0cbf17662a56985a32fff1484af210a219e5c989e59609ded4fc8a4db3aa0d88cc43f4f7bd524f5caaa544064a8b8572118f34f1c2a56383a781dba961c8e7a7605f930e7266e3c73455c4c25a10cd11d3350aa87eafc738c0703627651a44576bcba314c589921f4ebfcac82f4989cb77f9a73e922b9f4737adc35749f2043a7b83e67fc3ea8122655eb24073f2cf68f4baacf619a900edd140ff3abe022f3de5c029979ec23fe0493c79347e399c4e01ba577f\",\n    \"capability\": 4328650366975,\n    \"forcePasswordChange\": false,\n    \"isAccountLocked\": false,\n    \"ownerOrganization\": {\n        \"providerId\": 0,\n        \"GUID\": \"95189d4e-4a7f-4cb3-969f-80d5871ac13f\",\n        \"providerDomainName\": \"Commcell\"\n    },\n    \"additionalResp\": {\n        \"nameValues\": [\n            {\n                \"name\": \"USERNAME\",\n                \"value\": \"admin\"\n            }\n        ]\n    },\n    \"providerOrganization\": {\n        \"providerId\": 0,\n        \"GUID\": \"95189d4e-4a7f-4cb3-969f-80d5871ac13f\",\n        \"providerDomainName\": \"Commcell\"\n    },\n    \"errList\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Create customer in CommServe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "760fdf44-9d94-44a0-a488-6a3fb84af70a",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"organizationId\", jsonData.response.entity.providerId);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"companyGUID\", jsonData.response.entity.GUID);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authtoken",
+						"value": "{{Token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "{{Content-Type}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "{{Accept}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizationInfo\": {\r\n        \"organization\": {\r\n            \"connectName\": \"{{connectName}}\",\r\n            \"emailDomainNames\": [\r\n                \"{{emailDomainNames}}\"\r\n            ],\r\n            \"shortName\": {\r\n                \"domainName\": \"{{companyName}}\"\r\n            }\r\n        },\r\n        \"organizationProperties\": {\r\n            \"primaryDomain\": \"\",\r\n            \"primaryContacts\": [\r\n                {\r\n                    \"fullName\": \"{{fullName}}\",\r\n                    \"email\": \"{{email}}\"\r\n                }\r\n            ]\r\n        }\r\n    },\r\n    \"sendEmail\": false\r\n}"
+				},
+				"url": {
+					"raw": "{{ServerURL}}/Organization",
+					"host": [
+						"{{ServerURL}}"
+					],
+					"path": [
+						"Organization"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create customer in CommServe",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authtoken",
+								"value": "{{Token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{Content-Type}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "{{Accept}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organizationInfo\": {\r\n        \"organization\": {\r\n            \"connectName\": \"{{connectName}}\",\r\n            \"emailDomainNames\": [\r\n                \"{{emailDomainNames}}\"\r\n            ],\r\n            \"shortName\": {\r\n                \"domainName\": \"{{domainName}}\"\r\n            }\r\n        },\r\n        \"organizationProperties\": {\r\n            \"primaryDomain\": \"\",\r\n            \"primaryContacts\": [\r\n                {\r\n                    \"fullName\": \"{{fullName}}\",\r\n                    \"email\": \"{{email}}\"\r\n                }\r\n            ]\r\n        }\r\n    },\r\n    \"sendEmail\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{ServerURL}}/Organization",
+							"host": [
+								"{{ServerURL}}"
+							],
+							"path": [
+								"Organization"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 May 2020 05:30:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"processinginstructioninfo\": {\n        \"attributes\": [\n            {\n                \"name\": \"exitval\",\n                \"value\": \"0\"\n            }\n        ]\n    },\n    \"response\": {\n        \"errorCode\": 0,\n        \"entity\": {\n            \"GUID\": \"97235316-88AD-4736-B557-1DD0EC07BF6E\",\n            \"_type_\": 61,\n            \"providerId\": 3,\n            \"providerDomainName\": \"companyName\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Generate authcode for installation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c102d8a-21a3-44cf-91f9-7fbc1d880501",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authtoken",
+						"value": "{{Token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "{{Content-Type}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "{{Accept}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organization\": {\r\n        \"providerId\": {{organizationId}}\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{ServerURL}}/Organization/{{organizationId}}/AuthToken",
+					"host": [
+						"{{ServerURL}}"
+					],
+					"path": [
+						"Organization",
+						"{{organizationId}}",
+						"AuthToken"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Generate registration token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authtoken",
+								"value": "{{Token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{Content-Type}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "{{Accept}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organization\": {\r\n        \"providerId\": {{organizationId}}\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{ServerURL}}/Organization/{{organizationId}}/AuthToken",
+							"host": [
+								"{{ServerURL}}"
+							],
+							"path": [
+								"Organization",
+								"{{organizationId}}",
+								"AuthToken"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 May 2020 05:37:32 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"processinginstructioninfo\": {\n        \"attributes\": [\n            {\n                \"name\": \"exitval\",\n                \"value\": \"0\"\n            }\n        ]\n    },\n    \"organizationProperties\": {\n        \"authCode\": \"D3B1E46FF\"\n    },\n    \"error\": {\n        \"errorMessage\": \"\",\n        \"errorCode\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Onboard SDDC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authtoken",
+						"type": "text",
+						"value": "{{Token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "{{Content-Type}}"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "{{Accept}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"CompanyName\"           :    \"{{CompanyName}}\",\r\n\t\"StoragePoolName\"       :    \"{{StoragePoolName}}\",           \r\n    \"BucketName\"            :    \"{{BucketName}}\",               \r\n    \"SecretKey\"             :    \"{{SecretKey}}\",           \r\n    \"ServiceHost\"           :    \"{{ServiceHost}}\",           \r\n    \"AccessKey\"             :    \"{{AccessKey}}\",\r\n    \"SDDCName\"              :    \"{{SDDCName}}\",\r\n    \"SDDCUserName\"          :    \"{{SDDCUserName}}\",\r\n    \"SDDCPassword\"          :    \"{{SDDCPassword}}\",   \r\n    \"PlanName\"              :    \"{{PlanName}}\",               \r\n    \"TagName\"               :    \"{{TagName}}\",\r\n\t\"NoOfNodes\"\t\t\t\t:\t {{NoOfNodes}},\r\n\t\"ovaPath\"\t\t\t\t:\t \"{{ovaPath}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{ServerURL}}/wapi/OnBoardSDDC",
+					"host": [
+						"{{ServerURL}}"
+					],
+					"path": [
+						"wapi",
+						"OnBoardSDDC"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c1359ca4-dde8-4760-945c-c8598339242b",
+				"type": "text/javascript",
+				"exec": [
+					"//Modify inputs for the following operations:",
+					"",
+					"//Login",
+					"postman.setEnvironmentVariable(\"ServerURL\", \"http://<webservicehostname>:81/SearchSvc/CVWebService.svc\");",
+					"",
+					"postman.setEnvironmentVariable(\"UserName\", \"\");",
+					"postman.setEnvironmentVariable(\"Password\", \"==\");",
+					"postman.setEnvironmentVariable(\"Content-Type\", \"application/json\");",
+					"postman.setEnvironmentVariable(\"Accept\", \"application/json\");",
+					"",
+					"//Create customer in Commserver",
+					"postman.setEnvironmentVariable(\"companyName\", \"\");",
+					"postman.setEnvironmentVariable(\"emailDomainNames\", \"\");",
+					"postman.setEnvironmentVariable(\"connectName\", postman.getEnvironmentVariable(\"companyName\"));",
+					"postman.setEnvironmentVariable(\"fullName\", \"\");",
+					"postman.setEnvironmentVariable(\"email\", \"\");",
+					"",
+					"",
+					"//Create SDDC Hypervisor client ",
+					"",
+					"/**Note: ",
+					"Inputs \"EnableDDB\" , \"RetentionPeriod\" , \"BackupFrequency\" , \"StartTime\" are optional*/",
+					"",
+					"postman.setEnvironmentVariable(\"StoragePoolName\", postman.getEnvironmentVariable(\"companyName\") + \"Pool\");",
+					"postman.setEnvironmentVariable(\"BucketName\", \"\");",
+					"postman.setEnvironmentVariable(\"SecretKey\", \"\");",
+					"postman.setEnvironmentVariable(\"ServiceHost\", \"\");",
+					"postman.setEnvironmentVariable(\"AccessKey\", \"\");",
+					"postman.setEnvironmentVariable(\"CompanyName\", postman.getEnvironmentVariable(\"companyName\"));",
+					"postman.setEnvironmentVariable(\"SDDCName\", \"\");",
+					"postman.setEnvironmentVariable(\"SDDCUserName\", \"\");",
+					"postman.setEnvironmentVariable(\"SDDCPassword\", \"\");",
+					"postman.setEnvironmentVariable(\"PlanName\", postman.getEnvironmentVariable(\"companyName\") + \" Plan\");",
+					"postman.setEnvironmentVariable(\"TagName\", postman.getEnvironmentVariable(\"companyName\"));",
+					"postman.setEnvironmentVariable(\"NoOfNodes\", 2);",
+					"postman.setEnvironmentVariable(\"ovaPath\", \"\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0b12b900-dec6-43cd-8af4-f45f9839c001",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
