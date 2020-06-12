@@ -1,6 +1,6 @@
-# VMC on AWS Trial
+# VMC on AWS Automation
 
-This Trial POC script offers ability to onboard Tenants to an MSP(Managed Service Provider) environment seeking VMC Backup Solution.
+This Automation POC script offers ability to onboard Tenants to an MSP(Managed Service Provider) environment seeking VMC Backup Solution.
 
 
 ## Prerequisites:
