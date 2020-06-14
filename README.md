@@ -9,9 +9,8 @@ The CommServer and the VMC SDDC should have direct connection between each other
 Minimum SP(Service Pack) level - SP19
 
 ## Steps to Follow:
-
 1) Download all the files from the above repository.
-2) Download the <a href="https://commvaultapplicanceova.s3-us-west-2.amazonaws.com/commvaultappliance.ova" onclick="return ! window.open(this.href);">ova file</a> and copy it to the VSA Proxy machine which would be used for deployment of Tenant Proxy+MA on the SDDC.
+2) Download the <a href="https://commvaultappliance.s3-us-west-2.amazonaws.com/commvaultappliance.ova" onclick="return ! window.open(this.href);">ova file</a> and copy it to the VSA Proxy machine which would be used for deployment of Tenant Proxy+MA on the SDDC.
 3) Install vmware ovf tools from the below location on the same deployer proxy machine where the .ova file is placed.    	
 	OVF Installer location - https://code.vmware.com/web/tool/4.4.0/ovf (For Windows use the following path as installation folder - C:\Program Files\VMware\VMware OVF Tool)
 4) Import the following workflows and deploy in the same order as below.	
