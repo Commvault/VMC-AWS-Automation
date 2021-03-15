@@ -11,7 +11,7 @@ Minimum SP(Service Pack) level - SP22
 
 ## Steps to Follow:
 1) Download all the files from the above repository.
-2) Download the <a href="https://commvaultappliance.s3-us-west-2.amazonaws.com/commvaultappliance.ova" onclick="return ! window.open(this.href);">ova file</a> and upload to content library, have it subscribed to the on-boarding SDDC on VMC.
+2) Download the <a href="https://commvaultappliance.s3-us-west-2.amazonaws.com/commvaultappliance.ova" onclick="return ! window.open(this.href);">ova file</a> and upload to content library, have it subscribed to the on-boarding SDDC on VMC, which would be used for deployment of Tenant Proxy+MA on the SDDC
 3) Import the following workflows and deploy in the same order as below.	
 	### Workflows:
 	1) DeployVM
