@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow_WorkflowDefinition apiMode="0" config="&lt;configuration />"
+    description="Create Cloud Library " executeOnWeb="0"
+    inputs="&lt;inputs>&lt;ServiceHost class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;StoragePoolName class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;EnableDDB class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>true&lt;/EnableDDB>&lt;MediaAgentName class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;BucketName class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;CompanyName class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;SecretKey class=&quot;workflow.types.EncryptedString&quot; _list_=&quot;false&quot; />&lt;AccessKey class=&quot;workflow.types.EncryptedString&quot; _list_=&quot;false&quot; />&lt;ExecutedFromAPI class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>false&lt;/ExecutedFromAPI>&lt;/inputs>"
+    interactive="0" isHtmlDescription="0" manualPercentageComplete="0"
+    name="CreateCloudLibrary" outputs="&lt;outputs />"
+    revision="$Revision:  $" tags=""
+    uniqueGuid="6810b61e-4d02-4d26-9f0a-887417caf612"
+    variables="&lt;variables>&lt;Password class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;OrganizationId class=&quot;java.lang.Integer&quot; _list_=&quot;false&quot; />&lt;MAList class=&quot;java.lang.String&quot; _list_=&quot;true&quot; />&lt;FirstMA class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;SecretKey class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;AccessKey class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;/variables>"
+    webHidden="0" workflowId="0">
+    <schema>
+        <outputs className="" name="outputs" type=""/>
+        <variables attribute="0" className="" name="variables" type="">
+            <children attribute="0" className="java.lang.String"
+                controlType="0" defaultValue="" displayName=""
+                hidden="0" inputType="java.lang.String" listType="0"
+                name="Password" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0" className="java.lang.Integer"
+                controlType="0" defaultValue="" displayName=""
+                hidden="0" inputType="java.lang.Integer" listType="0"
+                name="OrganizationId" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+            <children attribute="0" className="java.lang.String"
+                controlType="0" defaultValue="" displayName=""
+                hidden="0" inputType="java.lang.String" listType="1"
+                name="MAList" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0" className="java.lang.String"
+                controlType="0" defaultValue="" displayName=""
+                hidden="0" inputType="java.lang.String" listType="0"
+                name="FirstMA" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0" className="java.lang.String"
+                controlType="0" defaultValue="" hidden="0"
+                inputType="java.lang.String" listType="0"
+                name="SecretKey" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0" className="java.lang.String"
+                controlType="0" defaultValue="" hidden="0"
+                inputType="java.lang.String" listType="0"
+                name="AccessKey" type="{http://www.w3.org/2001/XMLSchema}string"/>
+        </variables>
+        <inputs attribute="0" className="" name="inputs" type="">
+            <children attribute="0" className="java.lang.String"
+                controlHidden="0" controlType="0" defaultValue=""
+                displayName="Bucket Name" documentation="" hidden="0"
+                inputType="java.lang.String" listType="0"
+                maximumValue="" minimumValue="" name="BucketName"
+                readOnly="0" required="1" searchable="0" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0" className="java.lang.String"
+                controlHidden="0" controlType="0" defaultValue=""
+                displayName="Media Agent" documentation="" hidden="0"
+                inputType="java.lang.String" listType="1"
+                maximumValue="" minimumValue="" name="MediaAgentName"
+                readOnly="0" required="1" searchable="0" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0"
+                className="workflow.types.EncryptedString"
+                controlHidden="0" controlType="0" defaultValue=""
+                displayName="Secret Key" documentation="" hidden="0"
+                inputType="workflow.types.EncryptedString" listType="0"
+                maximumValue="" minimumValue="" name="SecretKey"
+                readOnly="0" required="1" searchable="0" type="{workflow.types}EncryptedString"/>
+            <children attribute="0" className="java.lang.String"
+                controlHidden="0" controlType="0" defaultValue=""
+                displayName="Service Host" documentation="" hidden="0"
+                inputType="java.lang.String" listType="0"
+                maximumValue="" minimumValue="" name="ServiceHost"
+                readOnly="0" required="1" searchable="0" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0"
+                className="workflow.types.EncryptedString"
+                controlHidden="0" controlType="0" defaultValue=""
+                displayName="Access Key" documentation="" hidden="0"
+                inputType="workflow.types.EncryptedString" listType="0"
+                maximumValue="" minimumValue="" name="AccessKey"
+                readOnly="0" required="1" searchable="0" type="{workflow.types}EncryptedString"/>
+            <children attribute="0" className="java.lang.String"
+                controlHidden="0" controlType="0" defaultValue=""
+                displayName="" documentation="" hidden="0"
+                inputType="java.lang.String" listType="0"
+                maximumValue="" minimumValue="" name="StoragePoolName"
+                readOnly="0" required="1" searchable="0" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0" className="java.lang.Boolean"
+                controlHidden="0" controlType="5" defaultValue=""
+                displayName="" documentation="" hidden="0"
+                inputType="java.lang.Boolean" listType="0"
+                maximumValue="" minimumValue="" name="EnableDDB"
+                readOnly="0" required="0" searchable="0" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+            <children attribute="0" className="java.lang.String"
+                controlType="0" defaultValue="" displayName=""
+                documentation="" hidden="0" inputType="java.lang.String"
+                listType="0" name="CompanyName" readOnly="0" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            <children attribute="0" className="java.lang.String"
+                controlHidden="1" controlType="0" defaultValue=""
+                displayName="" documentation="" hidden="0"
+                inputType="java.lang.String" listType="0"
+                maximumValue="" minimumValue="" name="ExecutedFromAPI"
+                readOnly="0" required="0" searchable="0" type="{http://www.w3.org/2001/XMLSchema}string"/>
+        </inputs>
+        <config className="" name="configuration" type=""/>
+    </schema>
+    <Start commented="0" continueOnFailure="0" created="0"
+        description="" displayName="Start" height="36" interactive="0"
+        jobMode="0" name="Start" originalStyle="" skipAttempt="0"
+        style="image;image=/images/jgraphx/house.png"
+        uniqueName="Start_1" waitSetting="0" width="58" x="45" y="41">
+        <onExit language="4" script="if(xpath:{/workflow/inputs/ExecutedFromAPI}.contains(&quot;true&quot;))&#xd;&#xa;{&#xd;&#xa;    workflow.setVariable(&quot;SecretKey&quot;,xpath:{/workflow/inputs/SecretKey}.toString());&#xd;&#xa;    workflow.setVariable(&quot;AccessKey&quot;,xpath:{/workflow/inputs/AccessKey}.toString());&#xd;&#xa;}&#xd;&#xa;else&#xd;&#xa;{&#xd;&#xa;    workflow.types.EncryptedString e = xpath:{/workflow/inputs/SecretKey};&#xd;&#xa;    workflow.setVariable(&quot;SecretKey&quot;,(e.getPlainText()).toString());&#xd;&#xa;    workflow.types.EncryptedString f = xpath:{/workflow/inputs/AccessKey};&#xd;&#xa;    workflow.setVariable(&quot;AccessKey&quot;,(f.getPlainText()).toString());&#xd;&#xa;}&#xd;&#xa;"/>
+        <inputs val="&lt;inputs />"/>
+        <transition activity="Script_3" commented="0" originalStyle=""
+            points="" sourceX="74" sourceY="59" status="0"
+            style="defaultEdge" targetX="87" targetY="148"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+        </transition>
+    </Start>
+    <Activity commented="0" continueOnFailure="0"
+        created="1587775241070" description="performs http operations"
+        displayName="Create Cloud Library &#xa;without DDB Enabled"
+        height="34" interactive="0" jobMode="0" name="HttpClient"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.HttpClientActivity"
+        uniqueName="HttpClient_1" waitSetting="0" width="194" x="375" y="123">
+        <inputs val="&lt;inputs>&lt;request>&lt;url>/SearchSvc/CVWebService.svc/StoragePool?Action=create&lt;/url>&lt;method>POST&lt;/method>&lt;postType>Raw&lt;/postType>&lt;postContent>{&#xd;&#xa;    &quot;storagePolicyName&quot;: &quot;xpath:{/workflow/inputs/StoragePoolName}&quot;,&#xd;&#xa;    &quot;type&quot;: 1,&#xd;&#xa;    &quot;copyName&quot;: &quot;xpath:{/workflow/inputs/StoragePoolName}_Copy&quot;,  &#xd;&#xa;    &quot;numberOfCopies&quot;: 1,&#xd;&#xa;    &#xd;&#xa;    &quot;storage&quot;: [&#xd;&#xa;        {&#xd;&#xa;            &quot;deviceType&quot;: 2,   &#xd;&#xa;            &quot;path&quot;: &quot;xpath:{/workflow/inputs/BucketName}&quot;, &#xd;&#xa;            &quot;mediaAgent&quot;: {&#xd;&#xa;                &quot;mediaAgentName&quot;: &quot;xpath:{/workflow/variables/FirstMA}&quot; &#xd;&#xa;            },&#xd;&#xa;            &quot;credentials&quot;: {&#xd;&#xa;                &quot;password&quot;: &quot;xpath:{/workflow/variables/Password}&quot;, &#xd;&#xa;                &quot;userName&quot;: &quot; xpath:{/workflow/inputs/ServiceHost}@0//xpath:{/workflow/variables/AccessKey}&quot; &#xd;&#xa;            }&#xd;&#xa;        }&#xd;&#xa;    ],&#xd;&#xa;    &quot;storagePolicyCopyInfo&quot;: {&#xd;&#xa;        &quot;copyType&quot;: 1,&#xd;&#xa;        &quot;isFromGui&quot;: true,&#xd;&#xa;        &quot;active&quot;: 1,&#xd;&#xa;        &quot;isDefault&quot;: 1,&#xd;&#xa;        &quot;numberOfStreamsToCombine&quot;: 1,&#xd;&#xa;        &quot;storagePolicyFlags&quot;: {&#xd;&#xa;            &quot;globalStoragePolicy&quot;: 1&#xd;&#xa;        },&#xd;&#xa;       &quot;extendedFlags&quot;: {&#xd;&#xa;            &quot;globalStoragePolicy&quot;: 1&#xd;&#xa;        },&#xd;&#xa;        &quot;retentionRules&quot;: {&#xd;&#xa;            &quot;retainBackupDataForCycles&quot;: -1,&#xd;&#xa;            &quot;retainArchiverDataForDays&quot;: -1,&#xd;&#xa;            &quot;retainBackupDataForDays&quot;: -1,&#xd;&#xa;            &quot;retentionFlags&quot;: {&#xd;&#xa;                &quot;enableDataAging&quot;: 1&#xd;&#xa;            }&#xd;&#xa;        },&#xd;&#xa;        &quot;DDBPartitionInfo&quot;: {&#xd;&#xa;            &quot;maInfoList&quot;: [&#xd;&#xa;                {&#xd;&#xa;                    &quot;mediaAgent&quot;: {&#xd;&#xa;                       &quot;mediaAgentName&quot;: &quot;xpath:{/workflow/variables/FirstMA}&quot;  &#xd;&#xa;                    },&#xd;&#xa;                    &quot;subStoreList&quot;: [&#xd;&#xa;                        {&#xd;&#xa;                            &quot;diskFreeWarningThreshholdMB&quot;: 10240,&#xd;&#xa;                            &quot;diskFreeThresholdMB&quot;: 5120,&#xd;&#xa;                            &quot;accessPath&quot;: {&#xd;&#xa;                                &quot;path&quot;: &quot;C:\\DDB&quot;   &#xd;&#xa;                            }&#xd;&#xa;                        }&#xd;&#xa;                    ]&#xd;&#xa;                }&#xd;&#xa;            ],&#xd;&#xa;            &quot;sidbStoreInfo&quot;: {&#xd;&#xa;                &quot;numSIDBStore&quot;: 2&#xd;&#xa;            }&#xd;&#xa;        },&#xd;&#xa;        &quot;library&quot;: {&#xd;&#xa;            &quot;libraryName&quot;: &quot;xpath:{/workflow/inputs/BucketName}&quot; &#xd;&#xa;        },&#xd;&#xa;        &quot;mediaAgent&quot;: {&#xd;&#xa;            &quot;mediaAgentName&quot;: &quot;xpath:{/workflow/variables/FirstMA}&quot;  &#xd;&#xa;        }&#xd;&#xa;    }&#xd;&#xa;}&lt;/postContent>&lt;postContentType>application/json&lt;/postContentType>&lt;headers>&lt;name>Authtoken&lt;/name>&lt;value>QSDKONLY xpath:{/workflow/system/token}&lt;/value>&lt;/headers>&lt;headers>&lt;name>Accept&lt;/name>&lt;value>application/xml&lt;/value>&lt;/headers>&lt;headers>&lt;name>operatorCompanyId&lt;/name>&lt;value>xpath:{/workflow/variables/OrganizationId}&lt;/value>&lt;/headers>&lt;/request>&lt;/inputs>"/>
+        <transition activity="EnableLogging_2" commented="0"
+            originalStyle="" points="" sourceX="472" sourceY="140"
+            status="0" style="defaultEdge" targetX="487" targetY="61"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="1"
+        created="1587777363719"
+        description="retrieves a list of values from xml"
+        displayName="XPathQuery" height="34" interactive="0" jobMode="0"
+        maxRestarts="0" name="XPathQuery"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.XMLQueryActivity"
+        uniqueName="XPathQuery_1" waitSetting="0" width="100" x="574" y="42">
+        <inputs val="&lt;inputs>&lt;xml class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>xpath:{/workflow/HttpClient_1/output}&lt;/xml>&lt;xpath class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>/App_CreateStoragePolicyResp/error/@errorCode&lt;/xpath>&lt;outputType class=&quot;workflow.types.SimpleType&quot; _list_=&quot;false&quot;>Integer&lt;/outputType>&lt;outputAsList class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>false&lt;/outputAsList>&lt;/inputs>"/>
+        <transition activity="XPathQuery_2" commented="0"
+            originalStyle="" points="" sourceX="751" sourceY="60"
+            status="0" style="defaultEdge;dashed=1" targetX="892"
+            targetY="61" transitionIndex="0" x="0" y="0">
+            <condition language="1" script="(xpath:{/workflow/XPathQuery_1/result} != 0);"/>
+        </transition>
+        <transition activity="ForEach_1" commented="0" originalStyle=""
+            points="649.0,133.0" sourceX="624" sourceY="59" status="0"
+            style="defaultEdge" targetX="829" targetY="87"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;(xpath:{/workflow/XPathQuery_1/result} == 0);"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1587777512332" description="Ends the workflow"
+        displayName="FAIL" height="20" interactive="0" jobMode="0"
+        name="WorkflowEnd"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.EndActivity"
+        uniqueName="WorkflowEnd_1" waitSetting="0" width="77" x="891" y="51">
+        <inputs val="&lt;inputs>&lt;completionStatus class=&quot;workflow.types.WorkflowCompletionStatus&quot; _list_=&quot;false&quot;>FAILED&lt;/completionStatus>&lt;failureMessage class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>Failed to create Cloud Storage Pool with error:  xpath:{/workflow/XPathQuery_2/result}&lt;/failureMessage>&lt;/inputs>"/>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1589835980888"
+        description="retrieves a list of values from xml"
+        displayName="XPathQuery" height="34" interactive="0" jobMode="0"
+        name="XPathQuery"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.XMLQueryActivity"
+        uniqueName="XPathQuery_2" waitSetting="0" width="100" x="739" y="43">
+        <inputs val="&lt;inputs>&lt;xml class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>xpath:{/workflow/HttpClient_1/output}&lt;/xml>&lt;xpath class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>/App_CreateStoragePolicyResp/error/@errorMessage&lt;/xpath>&lt;outputType class=&quot;workflow.types.SimpleType&quot; _list_=&quot;false&quot;>String&lt;/outputType>&lt;outputAsList class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>false&lt;/outputAsList>&lt;/inputs>"/>
+        <transition activity="WorkflowEnd_1" commented="0"
+            originalStyle="" points="" sourceX="892" sourceY="61"
+            status="0" style="defaultEdge;dashed=1" targetX="1139"
+            targetY="67" transitionIndex="0" x="0" y="0"/>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1589911019354" description="Ends the workflow"
+        displayName="Success" height="34" interactive="0" jobMode="0"
+        name="WorkflowEnd"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.EndActivity"
+        uniqueName="WorkflowEnd_2" waitSetting="0" width="106" x="1263" y="145">
+        <inputs val="&lt;inputs>&lt;completionStatus class=&quot;workflow.types.WorkflowCompletionStatus&quot; _list_=&quot;false&quot; />&lt;failureMessage class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;/inputs>"/>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590048038185"
+        description="turns off all logging, except for errors, for current job"
+        displayName="DisableLogging" height="34" interactive="0"
+        jobMode="0" name="DisableLogging"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.LoggingDisable"
+        uniqueName="DisableLogging_1" waitSetting="0" width="117"
+        x="197" y="14">
+        <inputs val="&lt;inputs />"/>
+        <transition activity="HttpClient_2" commented="0"
+            originalStyle="" points="" sourceX="255" sourceY="31"
+            status="0" style="defaultEdge" targetX="257" targetY="139"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;xpath:{/workflow/inputs/EnableDDB};"/>
+        </transition>
+        <transition activity="HttpClient_1" commented="0"
+            originalStyle="" points="422.0,66.0" sourceX="255"
+            sourceY="31" status="0" style="defaultEdge" targetX="473"
+            targetY="137" transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;!xpath:{/workflow/inputs/EnableDDB};"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590048042791"
+        description="turns on all logging for the current job"
+        displayName="EnableLogging" height="34" interactive="0"
+        jobMode="0" name="EnableLogging"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.LoggingEnable"
+        uniqueName="EnableLogging_1" waitSetting="0" width="113" x="222" y="207">
+        <inputs val="&lt;inputs />"/>
+        <transition activity="XPathQuery_4" commented="0"
+            originalStyle="" points="" sourceX="278" sourceY="224"
+            status="0" style="defaultEdge" targetX="649" targetY="223"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590048432604" description="performs http operations"
+        displayName="Create Cloud Library &#xa;with DDB Enabled"
+        height="34" interactive="0" jobMode="0" maxRestarts="5"
+        name="HttpClient"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.HttpClientActivity"
+        uniqueName="HttpClient_2" waitSetting="0" width="176" x="187" y="120">
+        <inputs val="&lt;inputs>&lt;request>&lt;url>/SearchSvc/CVWebService.svc/StoragePool?Action=create&lt;/url>&lt;method>POST&lt;/method>&lt;postType>Raw&lt;/postType>&lt;postContent>{&#xd;&#xa;    &quot;storagePolicyName&quot;: &quot;xpath:{/workflow/inputs/StoragePoolName}&quot;,&#xd;&#xa;    &quot;type&quot;: 1,&#xd;&#xa;    &quot;copyName&quot;: &quot;xpath:{/workflow/inputs/StoragePoolName}_Copy&quot;,  &#xd;&#xa;    &quot;numberOfCopies&quot;: 1,&#xd;&#xa;    &#xd;&#xa;    &quot;storage&quot;: [&#xd;&#xa;        {&#xd;&#xa;            &quot;deviceType&quot;: 2,   &#xd;&#xa;            &quot;path&quot;: &quot;xpath:{/workflow/inputs/BucketName}&quot;, &#xd;&#xa;            &quot;mediaAgent&quot;: {&#xd;&#xa;                &quot;mediaAgentName&quot;: &quot;xpath:{/workflow/variables/FirstMA}&quot;  &#xd;&#xa;            },&#xd;&#xa;            &quot;credentials&quot;: {&#xd;&#xa;                &quot;password&quot;: &quot;xpath:{/workflow/variables/Password}&quot;, &#xd;&#xa;                &quot;userName&quot;: &quot;xpath:{/workflow/inputs/ServiceHost}@0//xpath:{/workflow/variables/AccessKey}&quot; &#xd;&#xa;            }&#xd;&#xa;        }&#xd;&#xa;    ],&#xd;&#xa;    &quot;storagePolicyCopyInfo&quot;: {&#xd;&#xa;        &quot;copyType&quot;: 1,&#xd;&#xa;        &quot;isFromGui&quot;: true,&#xd;&#xa;        &quot;active&quot;: 1,&#xd;&#xa;        &quot;isDefault&quot;: 1,&#xd;&#xa;        &quot;numberOfStreamsToCombine&quot;: 1,&#xd;&#xa;        &quot;dedupeFlags&quot;: {&#xd;&#xa;            &quot;enableDASHFull&quot;: 1,&#xd;&#xa;            &quot;hostGlobalDedupStore&quot;: 1,&#xd;&#xa;            &quot;enableDeduplication&quot;: 1&#xd;&#xa;        },&#xd;&#xa;        &quot;storagePolicyFlags&quot;: {&#xd;&#xa;            &quot;blockLevelDedup&quot;: 1,&#xd;&#xa;            &quot;enableGlobalDeduplication&quot;: 1,&#xd;&#xa;            &quot;globalStoragePolicy&quot;: 1&#xd;&#xa;        },&#xd;&#xa;       &quot;extendedFlags&quot;: {&#xd;&#xa;            &quot;globalStoragePolicy&quot;: 1&#xd;&#xa;        },&#xd;&#xa;        &quot;retentionRules&quot;: {&#xd;&#xa;            &quot;retainBackupDataForCycles&quot;: -1,&#xd;&#xa;            &quot;retainArchiverDataForDays&quot;: -1,&#xd;&#xa;            &quot;retainBackupDataForDays&quot;: -1,&#xd;&#xa;            &quot;retentionFlags&quot;: {&#xd;&#xa;                &quot;enableDataAging&quot;: 1&#xd;&#xa;            }&#xd;&#xa;        },&#xd;&#xa;        &quot;DDBPartitionInfo&quot;: {&#xd;&#xa;            &quot;maInfoList&quot;: [&#xd;&#xa;                {&#xd;&#xa;                    &quot;mediaAgent&quot;: {&#xd;&#xa;                       &quot;mediaAgentName&quot;: &quot;xpath:{/workflow/variables/FirstMA}&quot;  &#xd;&#xa;                    },&#xd;&#xa;                    &quot;subStoreList&quot;: [&#xd;&#xa;                        {&#xd;&#xa;                            &quot;diskFreeWarningThreshholdMB&quot;: 10240,&#xd;&#xa;                            &quot;diskFreeThresholdMB&quot;: 5120,&#xd;&#xa;                            &quot;accessPath&quot;: {&#xd;&#xa;                                &quot;path&quot;: &quot;/opt/xpath:{/workflow/inputs/StoragePoolName}_DDB&quot;   &#xd;&#xa;                            }&#xd;&#xa;                        }&#xd;&#xa;                    ]&#xd;&#xa;                }&#xd;&#xa;            ],&#xd;&#xa;            &quot;sidbStoreInfo&quot;: {&#xd;&#xa;                &quot;numSIDBStore&quot;: 2&#xd;&#xa;            }&#xd;&#xa;        },&#xd;&#xa;        &quot;library&quot;: {&#xd;&#xa;            &quot;libraryName&quot;: &quot;xpath:{/workflow/inputs/BucketName}&quot; &#xd;&#xa;        },&#xd;&#xa;        &quot;mediaAgent&quot;: {&#xd;&#xa;            &quot;mediaAgentName&quot;: &quot;xpath:{/workflow/variables/FirstMA}&quot;  &#xd;&#xa;        }&#xd;&#xa;    }&#xd;&#xa;}&lt;/postContent>&lt;postContentType>application/json&lt;/postContentType>&lt;headers>&lt;name>Authtoken&lt;/name>&lt;value>QSDKONLY xpath:{/workflow/system/token}&lt;/value>&lt;/headers>&lt;headers>&lt;name>Accept&lt;/name>&lt;value>application/xml&lt;/value>&lt;/headers>&lt;headers>&lt;name>operatorCompanyId&lt;/name>&lt;value>xpath:{/workflow/variables/OrganizationId}&lt;/value>&lt;/headers>&lt;/request>&lt;/inputs>"/>
+        <transition activity="EnableLogging_1" commented="0"
+            originalStyle="" points="" sourceX="275" sourceY="137"
+            status="0" style="defaultEdge" targetX="270" targetY="226"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590051069766"
+        description="activity to execute code snippets in the selected language"
+        displayName="Encode" height="34" interactive="0" jobMode="0"
+        name="Script" namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.ScriptActivity"
+        uniqueName="Script_3" waitSetting="0" width="100" x="33" y="130">
+        <inputs val="&lt;inputs>&lt;script language=&quot;1&quot; script=&quot;import java.util.Base64;&amp;#xD;&amp;#xA;int softstate = 0;&amp;#xD;&amp;#xA;while(softstate==0)&amp;#xD;&amp;#xA;{&amp;#xD;&amp;#xA;    Thread.sleep(10000);&amp;#xD;&amp;#xA;    String ma = xpath:{/workflow/inputs/MediaAgentName}.get(0);&amp;#xD;&amp;#xA;    logger.info(&amp;quot;Chosen MA : &amp;quot;+ma+ &amp;quot; not ready yet&amp;quot;);&amp;#xD;&amp;#xA;    &amp;#xD;&amp;#xA;    String sql = &amp;quot;select MmHostSoftState from MMHost where clientId = (select id from app_client where name = '&amp;quot; + ma +&amp;quot;')&amp;quot;;&amp;#xD;&amp;#xA;    DataSet rs = csdb.execute(sql);    &amp;#xD;&amp;#xA;    while(rs.hasNext()) {&amp;#xD;&amp;#xA;       softstate = rs.get(&amp;quot;MmHostSoftState&amp;quot;);&amp;#xD;&amp;#xA;    }&amp;#xD;&amp;#xA;}  &amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;Thread.sleep(30000);&amp;#xD;&amp;#xA;logger.info(&amp;quot;softstate set continuing with library creation&amp;quot;);  &amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;String sql = &amp;quot;select id from umdsproviders where domainName = '&amp;quot; + xpath:{/workflow/inputs/CompanyName} + &amp;quot;'&amp;quot;;&amp;#xD;&amp;#xA;    DataSet rs = csdb.execute(sql);&amp;#xD;&amp;#xA;    int OrganizationId = 0;&amp;#xD;&amp;#xA;    while(rs.hasNext()) {&amp;#xD;&amp;#xA;       OrganizationId = rs.get(&amp;quot;id&amp;quot;);&amp;#xD;&amp;#xA;    }&amp;#xD;&amp;#xA;    workflow.setVariable(&amp;quot;OrganizationId&amp;quot;, OrganizationId); &amp;#xD;&amp;#xA;    logger.info(&amp;quot;&amp;gt;&amp;gt; OrganizationId: &amp;quot; + Integer.toString(OrganizationId));&amp;#xD;&amp;#xA;String pass = xpath:{/workflow/variables/SecretKey};&amp;#xD;&amp;#xA;String encodedpass = Base64.getEncoder().encodeToString(pass.getBytes(&amp;quot;utf-8&amp;quot;));&amp;#xD;&amp;#xA;workflow.setVariable(&amp;quot;Password&amp;quot;,encodedpass);&amp;#xD;&amp;#xA;firstma = xpath:{/workflow/inputs/MediaAgentName}.toArray();&amp;#xD;&amp;#xA;workflow.setVariable(&amp;quot;FirstMA&amp;quot;,firstma[0]);&amp;#xD;&amp;#xA;String[] malist = new String[firstma.length-1];&amp;#xD;&amp;#xA;for(i=0;i&amp;lt;firstma.length-1;i++)&amp;#xD;&amp;#xA;{&amp;#xD;&amp;#xA;   malist[i]=firstma[i+1];&amp;#xD;&amp;#xA;}&amp;#xD;&amp;#xA;workflow.setVariable(&amp;quot;MAList&amp;quot;,malist);&amp;#xD;&amp;#xA;&quot; />&lt;/inputs>"/>
+        <transition activity="DisableLogging_1" commented="0"
+            originalStyle="" points="" sourceX="83" sourceY="147"
+            status="0" style="defaultEdge" targetX="343" targetY="65"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="1"
+        created="1590052095783"
+        description="retrieves a list of values from xml"
+        displayName="XPathQuery" height="34" interactive="0" jobMode="0"
+        maxRestarts="0" name="XPathQuery"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.XMLQueryActivity"
+        uniqueName="XPathQuery_4" waitSetting="0" width="100" x="608" y="206">
+        <inputs val="&lt;inputs>&lt;xml class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>xpath:{/workflow/HttpClient_2/output}&lt;/xml>&lt;xpath class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>/App_CreateStoragePolicyResp/error/@errorCode&lt;/xpath>&lt;outputType class=&quot;workflow.types.SimpleType&quot; _list_=&quot;false&quot;>Integer&lt;/outputType>&lt;outputAsList class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>false&lt;/outputAsList>&lt;/inputs>"/>
+        <transition activity="XPathQuery_5" commented="0"
+            originalStyle="" points="" sourceX="769" sourceY="222"
+            status="0" style="defaultEdge;dashed=1" targetX="910"
+            targetY="223" transitionIndex="0" x="18" y="162">
+            <condition language="1" script="(xpath:{/workflow/XPathQuery_4/result} != 0);"/>
+        </transition>
+        <transition activity="ForEach_1" commented="0" originalStyle=""
+            points="648.0,158.0" sourceX="642" sourceY="221" status="0"
+            style="defaultEdge" targetX="750" targetY="87"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;(xpath:{/workflow/XPathQuery_4/result} == 0);"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590052095816"
+        description="retrieves a list of values from xml"
+        displayName="XPathQuery" height="34" interactive="0" jobMode="0"
+        name="XPathQuery"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.XMLQueryActivity"
+        uniqueName="XPathQuery_5" waitSetting="0" width="100" x="776" y="330">
+        <inputs val="&lt;inputs>&lt;xml class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>xpath:{/workflow/HttpClient_2/output}&lt;/xml>&lt;xpath class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>/App_CreateStoragePolicyResp/error/@errorMessage&lt;/xpath>&lt;outputType class=&quot;workflow.types.SimpleType&quot; _list_=&quot;false&quot;>String&lt;/outputType>&lt;outputAsList class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>false&lt;/outputAsList>&lt;/inputs>"/>
+        <transition activity="WorkflowEnd_3" commented="0"
+            originalStyle="" points="" sourceX="910" sourceY="223"
+            status="0" style="defaultEdge;dashed=1" targetX="1157"
+            targetY="229" transitionIndex="0" x="18" y="162"/>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590052095878" description="Ends the workflow"
+        displayName="FAIL" height="20" interactive="0" jobMode="0"
+        name="WorkflowEnd"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.EndActivity"
+        uniqueName="WorkflowEnd_3" waitSetting="0" width="77" x="974" y="336">
+        <inputs val="&lt;inputs>&lt;completionStatus class=&quot;workflow.types.WorkflowCompletionStatus&quot; _list_=&quot;false&quot;>FAILED&lt;/completionStatus>&lt;failureMessage class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>Failed to create Cloud Storage Pool with error:  xpath:{/workflow/XPathQuery_5/result}&lt;/failureMessage>&lt;/inputs>"/>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590052134103"
+        description="turns on all logging for the current job"
+        displayName="EnableLogging" height="34" interactive="0"
+        jobMode="0" name="EnableLogging"
+        namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0"
+        style="label;image=commvault.cte.workflow.activities.LoggingEnable"
+        uniqueName="EnableLogging_2" waitSetting="0" width="113" x="440" y="43">
+        <inputs val="&lt;inputs />"/>
+        <transition activity="XPathQuery_1" commented="0"
+            originalStyle="" points="" sourceX="496" sourceY="60"
+            status="0" style="defaultEdge" targetX="600" targetY="57"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+        </transition>
+    </Activity>
+    <Activity commented="0" continueOnFailure="0"
+        created="1590479441992"
+        description="iterates a group of activities over a list of values"
+        displayName="ForEach" height="191" interactive="0" jobMode="0"
+        name="ForEach" namespaceUri="commvault.cte.workflow.activities"
+        originalStyle="" skipAttempt="0" style="swimlane"
+        uniqueName="ForEach_1" waitSetting="0" width="278" x="786" y="85">
+        <inputs val="&lt;inputs>&lt;name class=&quot;java.lang.String&quot;>MAList&lt;/name>&lt;values class=&quot;java.lang.Object&quot; _list_=&quot;false&quot;>xpath:{/workflow/variables/MAList}&lt;/values>&lt;numberOfParallelExecutions class=&quot;java.lang.Integer&quot; _list_=&quot;false&quot;>1&lt;/numberOfParallelExecutions>&lt;continueOnFailure class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>false&lt;/continueOnFailure>&lt;/inputs>"/>
+        <superProcess>
+            <Start commented="0" continueOnFailure="0"
+                created="1590479441992" description=""
+                displayName="Start" height="30" interactive="0"
+                jobMode="0" name="Start" originalStyle=""
+                skipAttempt="0"
+                style="label;fillColor=#FFFF33;gradientColor=#FFFF00"
+                uniqueName="Start_2" waitSetting="0" width="120" x="11" y="30">
+                <inputs val="&lt;inputs />"/>
+                <transition activity="DisableLogging_2" commented="0"
+                    originalStyle="" points="" sourceX="71" sourceY="45"
+                    status="0" style="defaultEdge" targetX="74"
+                    targetY="126" transitionIndex="0" x="0" y="0">
+                    <condition language="4" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+                </transition>
+            </Start>
+            <Activity commented="0" continueOnFailure="0"
+                created="1611081577027"
+                description="turns off all logging, except for errors, for current job"
+                displayName="DisableLogging" height="34" interactive="0"
+                jobMode="0" name="DisableLogging"
+                namespaceUri="commvault.cte.workflow.activities"
+                originalStyle="" skipAttempt="0"
+                style="label;image=commvault.cte.workflow.activities.LoggingDisable"
+                uniqueName="DisableLogging_2" waitSetting="0"
+                width="117" x="12" y="112">
+                <inputs val="&lt;inputs />"/>
+                <transition activity="Execute_1" commented="0"
+                    originalStyle="" points="" sourceX="70"
+                    sourceY="129" status="0" style="defaultEdge"
+                    targetX="206" targetY="133" transitionIndex="0"
+                    x="0" y="0">
+                    <condition language="4" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+                </transition>
+            </Activity>
+            <Activity commented="0" continueOnFailure="0"
+                created="1590480398294" description=""
+                displayName="Add MP to &#xa;Cloud Library" height="34"
+                interactive="0" jobMode="0" name="Execute"
+                namespaceUri="commvault.cte.workflow.activities.cmd.operation"
+                originalStyle="" skipAttempt="0"
+                style="label;image=commvault.cte.workflow.activities.cmd.operation.OperationExecute"
+                uniqueName="Execute_1" waitSetting="0" width="105"
+                x="158" y="114">
+                <inputs val="&lt;inputs>&lt;inputXml class=&quot;java.lang.String&quot; _list_=&quot;false&quot;>&amp;lt;EVGui_ConfigureStorageLibraryReq isConfigRequired=&quot;1&quot;&amp;gt;&amp;#xD;&#xd;&#xa;&amp;lt;library libraryName=&quot;xpath:{/workflow/inputs/StoragePoolName}&quot; serverType=&quot;2&quot; mediaAgentName=&quot;xpath:{/workflow/ForEach_1/MAList}&quot; mountPath=&quot;xpath:{/workflow/inputs/BucketName}&quot; opType=&quot;4&quot; loginName=&quot;xpath:{/workflow/inputs/ServiceHost}@0//xpath:{/workflow/variables/AccessKey}&quot; password=&quot;xpath:{/workflow/variables/SecretKey}&quot;/&amp;gt;&amp;#xD;&#xd;&#xa;&amp;lt;/EVGui_ConfigureStorageLibraryReq&amp;gt;&lt;/inputXml>&lt;escapeXml class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>false&lt;/escapeXml>&lt;commandArgs class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;sessionOptions class=&quot;workflow.types.cmd.SessionOptions&quot; _list_=&quot;false&quot;>&lt;useImpersonatedAccount class=&quot;java.lang.Boolean&quot; _list_=&quot;false&quot;>true&lt;/useImpersonatedAccount>&lt;tokenFile class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;token class=&quot;java.lang.String&quot; _list_=&quot;false&quot; />&lt;/sessionOptions>&lt;/inputs>"/>
+                <transition activity="EnableLogging_3" commented="0"
+                    originalStyle="" points="" sourceX="210"
+                    sourceY="131" status="0" style="defaultEdge"
+                    targetX="205" targetY="57" transitionIndex="0" x="0" y="0">
+                    <condition language="4" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+                </transition>
+            </Activity>
+            <Activity commented="0" continueOnFailure="0"
+                created="1611081625402"
+                description="turns on all logging for the current job"
+                displayName="EnableLogging" height="34" interactive="0"
+                jobMode="0" name="EnableLogging"
+                namespaceUri="commvault.cte.workflow.activities"
+                originalStyle="" skipAttempt="0"
+                style="label;image=commvault.cte.workflow.activities.LoggingEnable"
+                uniqueName="EnableLogging_3" waitSetting="0" width="113"
+                x="145" y="38">
+                <inputs val="&lt;inputs />"/>
+            </Activity>
+        </superProcess>
+        <activitySchema>
+            <outputs name="outputs">
+                <children attribute="0" className="java.lang.String"
+                    controlType="0" defaultValue="" displayName=""
+                    hidden="0" inputType="java.lang.String" listType="0"
+                    name="MAList" type="{http://www.w3.org/2001/XMLSchema}string"/>
+            </outputs>
+            <inputs className="" name="" type="">
+                <children attribute="0" className="java.lang.String"
+                    hidden="0" inputType="java.lang.String" listType="0"
+                    name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+                <children attribute="0" className="java.lang.Object"
+                    displayName="" hidden="0"
+                    inputType="java.lang.Object" listType="0"
+                    name="values" type="{http://www.w3.org/2001/XMLSchema}anyType"/>
+                <children attribute="0" className="java.lang.Integer"
+                    defaultValue="1" displayName="" hidden="0"
+                    inputType="java.lang.Integer" listType="0"
+                    name="numberOfParallelExecutions" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+                <children attribute="0" className="java.lang.Boolean"
+                    defaultValue="false" hidden="0"
+                    inputType="java.lang.Boolean" listType="0"
+                    name="continueOnFailure" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+            </inputs>
+        </activitySchema>
+        <transition activity="WorkflowEnd_2" commented="0"
+            originalStyle="" points="" sourceX="856" sourceY="137"
+            status="0" style="defaultEdge" targetX="985" targetY="143"
+            transitionIndex="0" x="0" y="0">
+            <condition language="1" script="/*&#xa;The expression should return a boolean. Use the variable name &quot;activity&quot; to refer to the previous activity object. Example:&#xa;activity.exitCode==0;&#xa;*/&#xa;"/>
+        </transition>
+    </Activity>
+    <formProperties css="" formVersion="0" javaScript="" pageMode="0">
+        <rules/>
+    </formProperties>
+</Workflow_WorkflowDefinition>
