@@ -5,8 +5,9 @@ This Automation POC script offers ability to onboard Tenants to an MSP(Managed S
 
 ## Prerequisites:
 
-The CommServer and the VMC SDDC should have direct connection between each other.
-Minimum SP(Service Pack) level - SP19
+Workflow engine needs to be installed on the same node as deployer machine.
+Set additional setting ValidateSSL under WFEngine to 0 on workflow engine machine(deployer).
+Minimum SP(Service Pack) level - SP22
 
 ## Steps to Follow:
 1) Download all the files from the above repository.
