@@ -5,8 +5,8 @@ This Automation POC script offers ability to onboard Tenants to an MSP(Managed S
 
 ## Prerequisites:
 
-Workflow engine needs to be installed on the same node as deployer machine.
-Set additional setting ValidateSSL under WFEngine to 0 on workflow engine machine(deployer).
+	1)Workflow engine needs to be installed on the same node as deployer machine.
+	2)Set additional setting ValidateSSL under WFEngine to 0 on workflow engine machine(deployer).
 Minimum SP(Service Pack) level - SP22
 
 ## Steps to Follow:
