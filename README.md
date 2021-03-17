@@ -6,9 +6,10 @@ This Automation POC script offers ability to onboard Tenants to an MSP(Managed S
 ## Prerequisites:
 
 	1) Workflow engine needs to be installed on the same node as deployer machine.
-	2) Set additional setting ValidateSSL under WFEngine to 0 on workflow engine machine(deployer).
-	3) Set additional setting WF_defaultWebservice under WFEngine to http://<webservicehostname>/webconsole/api on workflow engine machine(deployer).
-	4) Restart WorkflowEngine Services.
+	2) Set these advanced settings on the workflow engine machine(deployer)-
+		(DWORD)  HKEY_LOCAL_MACHINE\SOFTWARE\CommVault Systems\instance_name\WFEngine\ValidateSSL = 0
+		(String) HKEY_LOCAL_MACHINE\SOFTWARE\CommVault Systems\instance_name\WFEngine\WF_defaultWebservice = http://<webservicehostname>/webconsole/api
+	3) Restart WorkflowEngine Services on the workflow engine machine(deployer).
 Minimum SP(Service Pack) level - SP22
 
 ## Steps to Follow:
