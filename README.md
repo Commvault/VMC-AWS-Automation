@@ -9,7 +9,7 @@ This Automation POC script offers ability to onboard Tenants to an MSP(Managed S
 	2) Set this advanced settings on the workflow engine machine(deployer)-
 		(DWORD)  HKEY_LOCAL_MACHINE\SOFTWARE\CommVault Systems\instance_name\WFEngine\ValidateSSL = 0
 	3) Restart WorkflowEngine Services on the workflow engine machine(deployer).
-	4) A Network Topology of type Network Gateway needs to be created which consists of 3 Client Groups -- Servers (VSA Proxies), DMZ gateways (Network Proxy/Gateway) and 		   Infrastructure Machines (CS/MA)
+	4) A Network Topology of type Network Gateway needs to be created which consists of 3 Client Groups -- Servers (VSA Proxies), DMZ gateways (Network Proxy/Gateway) and Infrastructure Machines (CS/MA)
 Minimum SP(Service Pack) level - SP22
 
 ## Steps to Follow:
